@@ -1,0 +1,6 @@
+['remote "mlflow_logs"']
+    url = s3://plantcare-mlops/mlflow_logs
+['remote "s3_data"']
+    url = s3://plantcare-mlops/data_storage
+['remote "s3_model"']
+    url = s3://plantcare-mlops/model_registry

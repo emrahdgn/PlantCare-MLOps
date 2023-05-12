@@ -1,0 +1,34 @@
+# Data
+logs/
+
+
+# Artifacts
+outputs/mlflow/Experiments/*/*
+!outputs/mlflow/Experiments/**/*.dvc
+
+outputs/mlflow/Optimization_Tasks/*
+!outputs/mlflow/Optimization_Tasks/**/*.dvc
+
+/outputs/model/Optimization_Tasks/*
+!/outputs/model/Optimization_Tasks/**/*.dvc
+
+outputs/model/Experiments/*/*
+!outputs/model/Experiments/**/*.dvc
+
+
+# Packaging
+env/
+venv/
+*.egg-info/
+__pycache__/
+
+# Misc
+.DS_Store
+.vscode
+no-commit/
+htmlcov/
+/site/
+.coverage
+.env
+auto.sh
+.pytest_cache/

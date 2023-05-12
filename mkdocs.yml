@@ -1,0 +1,27 @@
+# mkdocs.yml
+site_name: PlantCare MLOps
+repo_url: https://github.com/emrahdgn/PlantCare-MLOps/
+nav:
+  - Home: index.md
+  - workflows:
+    - main: plantcare/main.md
+  - plantcare:
+    - evaluate: plantcare/evaluate.md
+    - predict: plantcare/predict.md
+    - train: plantcare/train.md
+    - model: plantcare/model.md
+    - data:
+      - data_functions: plantcare/data/data_functions.md
+      - data_transforms: plantcare/data/data_transforms.md
+      - dataloader: plantcare/data/dataloader.md
+      - dataset: plantcare/data/dataset.md
+    - utils:
+      - hardware: plantcare/utils/hardware.md
+      - mlflow: plantcare/utils/mlflow.md
+      - utils: plantcare/utils/utils.md
+
+theme: readthedocs
+plugins:
+  - mkdocstrings
+watch:
+  - .  # reload docs for any file changes
