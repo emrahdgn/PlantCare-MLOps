@@ -191,7 +191,7 @@ def save_json(content: Any, file_path: str) -> None:
         json.dump(content, fp, indent=3)
 
 
-def read_json(file_path):
+def read_json(file_path) -> Any:
     """
     Read JSON content from the specified file path.
 

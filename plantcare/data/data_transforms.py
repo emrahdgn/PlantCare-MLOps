@@ -51,7 +51,7 @@ class CombinedTestTransform:
         Initializes a CombinedTestTransform object.
 
         Args:
-            default_transform (Callable): The default transform to be applied.
+            default_transforms (Callable): The default transform to be applied.
         """
         self.default_transforms = default_transforms
 
