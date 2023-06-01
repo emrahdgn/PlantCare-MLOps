@@ -51,9 +51,9 @@ class CombinedTestTransform:
         Initializes a CombinedTestTransform object.
 
         Args:
-            default_transforms (Callable): The default transform to be applied.
+            default_transform (Callable): The default transform to be applied.
         """
-        self.default_transforms = default_transforms
+        self.default_transform = default_transforms
 
     def __call__(self, img: Image.Image) -> Image.Image:
         """
@@ -65,5 +65,5 @@ class CombinedTestTransform:
         Returns:
             Image.Image: The transformed image.
         """
-        img = self.default_transforms(img)
+        img = self.default_transform(img)
         return img

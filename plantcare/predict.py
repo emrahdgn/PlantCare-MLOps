@@ -30,7 +30,10 @@ def predict(images: List[Image.Image], artifacts: Dict[str, Any], batch: bool = 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     input_images = torch.tensor(input_images).float().to(device)
-    outputs = artifacts["model"].model(input_images)
+    
+    with torch.inference_mode():
+        outputs = artifacts["model"].model(input_images)
+    
     preds = (outputs > 0.5).cpu().detach().float()
     pred_labels = artifacts["label_encoder"].inverse_transform(preds)
 
