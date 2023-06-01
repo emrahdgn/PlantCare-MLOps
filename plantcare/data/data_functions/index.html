@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>data_functions - PlantCare MLOps</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "data_functions";
+        var mkdocs_page_input_path = "plantcare/data/data_functions.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> PlantCare MLOps
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">workflows</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../main/">main</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">plantcare</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../evaluate/">evaluate</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../predict/">predict</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../train/">train</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../model/">model</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">data</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">data_functions</a>
+    <ul class="current">
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../data_transforms/">data_transforms</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../dataloader/">dataloader</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../dataset/">dataset</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">utils</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../utils/hardware/">hardware</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../utils/mlflow/">mlflow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../utils/utils/">utils</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">PlantCare MLOps</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>plantcare &raquo;</li>
+          <li>data &raquo;</li>
+      <li>data_functions</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/emrahdgn/PlantCare-MLOps/edit/master/docs/plantcare/data/data_functions.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="doc doc-object doc-module">
+
+
+<a id="plantcare.data.data_functions"></a>
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="plantcare.data.data_functions.extract_zip" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">extract_zip</span><span class="p">(</span><span class="n">zip_path</span><span class="p">,</span> <span class="n">destination_path</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Extracts the contents of a zip file to the specified destination directory.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>zip_path</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>The path to the zip file.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>destination_path</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>The path to the destination directory.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>plantcare/data/data_functions.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">extract_zip</span><span class="p">(</span><span class="n">zip_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">destination_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Extracts the contents of a zip file to the specified destination directory.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        zip_path (str): The path to the zip file.</span>
+<span class="sd">        destination_path (str): The path to the destination directory.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">destination_path</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;unzip </span><span class="si">{</span><span class="n">zip_path</span><span class="si">}</span><span class="s2"> -d </span><span class="si">{</span><span class="n">destination_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="plantcare.data.data_functions.get_data_splits" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_data_splits</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Splits the input data into training, validation, and test sets.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>X</code></td>
+          <td>
+                <code><span title="typing.Any">Any</span></code>
+          </td>
+          <td><p>The input features.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>y</code></td>
+          <td>
+                <code><span title="typing.Any">Any</span></code>
+          </td>
+          <td><p>The target variable.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>train_size</code></td>
+          <td>
+                <code>float</code>
+          </td>
+          <td><p>The proportion of the data to include in the training set. Defaults to 0.7.</p></td>
+          <td>
+                <code>0.7</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>tuple</code></td>          <td>
+                <code><span title="typing.Tuple">Tuple</span>[<span title="typing.Any">Any</span>, <span title="typing.Any">Any</span>, <span title="typing.Any">Any</span>, <span title="typing.Any">Any</span>, <span title="typing.Any">Any</span>, <span title="typing.Any">Any</span>]</code>
+          </td>
+          <td><p>A tuple containing six elements in the following order:
+- training features (X_train)
+- validation features (X_val)
+- test features (X_test)
+- training target variable (y_train)
+- validation target variable (y_val)
+- test target variable (y_test)</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>plantcare/data/data_functions.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_data_splits</span><span class="p">(</span><span class="n">X</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">train_size</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Splits the input data into training, validation, and test sets.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        X (Any): The input features.</span>
+<span class="sd">        y (Any): The target variable.</span>
+<span class="sd">        train_size (float, optional): The proportion of the data to include in the training set. Defaults to 0.7.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: A tuple containing six elements in the following order:</span>
+<span class="sd">            - training features (X_train)</span>
+<span class="sd">            - validation features (X_val)</span>
+<span class="sd">            - test features (X_test)</span>
+<span class="sd">            - training target variable (y_train)</span>
+<span class="sd">            - validation target variable (y_val)</span>
+<span class="sd">            - test target variable (y_test)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="n">train_size</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">X_val</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_val</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_</span><span class="p">,</span> <span class="n">y_</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y_</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_val</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_val</span><span class="p">,</span> <span class="n">y_test</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="plantcare.data.data_functions.get_image_paths" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_image_paths</span><span class="p">(</span><span class="n">images_folder</span><span class="p">,</span> <span class="n">extensions</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;.png&#39;</span><span class="p">])</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns a list of image file paths in the given folder and its subfolders.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>images_folder</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>The path to the folder containing the images.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>extensions</code></td>
+          <td>
+                <code>list</code>
+          </td>
+          <td><p>A list of file extensions to include. Defaults to [".jpg", ".png"].</p></td>
+          <td>
+                <code>[&#39;.jpg&#39;, &#39;.png&#39;]</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>list</code></td>          <td>
+                <code><span title="typing.List">List</span>[str]</code>
+          </td>
+          <td><p>A list of image file paths.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>plantcare/data/data_functions.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">get_image_paths</span><span class="p">(</span><span class="n">images_folder</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">extensions</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;.png&quot;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns a list of image file paths in the given folder and its subfolders.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        images_folder (str): The path to the folder containing the images.</span>
+<span class="sd">        extensions (list, optional): A list of file extensions to include. Defaults to [&quot;.jpg&quot;, &quot;.png&quot;].</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: A list of image file paths.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">image_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">y</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">images_folder</span><span class="p">)</span> <span class="k">for</span> <span class="n">ext</span> <span class="ow">in</span> <span class="n">extensions</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="sa">f</span><span class="s2">&quot;*</span><span class="si">{</span><span class="n">ext</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">))]</span>
+    <span class="k">return</span> <span class="n">image_paths</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="plantcare.data.data_functions.preprocess" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">preprocess</span><span class="p">(</span><span class="n">df</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Preprocesses the input DataFrame by transforming the 'labels' column using a MultiLabelBinarizer.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>df</code></td>
+          <td>
+                <code><span title="pandas">pd</span>.<span title="pandas.DataFrame">DataFrame</span></code>
+          </td>
+          <td><p>The input DataFrame.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>tuple</code></td>          <td>
+                <code><span title="typing.Tuple">Tuple</span>[<span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>, <span title="sklearn.preprocessing.MultiLabelBinarizer">MultiLabelBinarizer</span>]</code>
+          </td>
+          <td><p>A tuple containing two elements:
+- The first element is a numpy array containing the transformed labels.
+- The second element is the fitted MultiLabelBinarizer object used to transform the labels.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>plantcare/data/data_functions.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span>
+<span class="normal">95</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">preprocess</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">MultiLabelBinarizer</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Preprocesses the input DataFrame by transforming the &#39;labels&#39; column using a MultiLabelBinarizer.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        df (pd.DataFrame): The input DataFrame.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: A tuple containing two elements:</span>
+<span class="sd">            - The first element is a numpy array containing the transformed labels.</span>
+<span class="sd">            - The second element is the fitted MultiLabelBinarizer object used to transform the labels.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">df_copy</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">df_copy</span><span class="p">[</span><span class="s2">&quot;labels&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_copy</span><span class="p">[</span><span class="s2">&quot;labels&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">label_encoder</span> <span class="o">=</span> <span class="n">MultiLabelBinarizer</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_copy</span><span class="p">[</span><span class="s2">&quot;labels&quot;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">label_encoder</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df_copy</span><span class="p">[</span><span class="s2">&quot;labels&quot;</span><span class="p">]),</span> <span class="n">label_encoder</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="plantcare.data.data_functions.resize_image" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">resize_image</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">target_size</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Resizes an image to the specified target size using bicubic resampling.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>image_path</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>The path to the image file.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>target_size</code></td>
+          <td>
+                <code>tuple</code>
+          </td>
+          <td><p>The target size of the image as a tuple of two integers (width, height).</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>plantcare/data/data_functions.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">resize_image</span><span class="p">(</span><span class="n">image_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">target_size</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Resizes an image to the specified target size using bicubic resampling.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        image_path (str): The path to the image file.</span>
+<span class="sd">        target_size (tuple): The target size of the image as a tuple of two integers (width, height).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+    <span class="n">img_resized</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">target_size</span><span class="p">,</span> <span class="n">resample</span><span class="o">=</span><span class="n">Image</span><span class="o">.</span><span class="n">BICUBIC</span><span class="p">)</span>
+    <span class="n">img_resized</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../model/" class="btn btn-neutral float-left" title="model"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../data_transforms/" class="btn btn-neutral float-right" title="data_transforms">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/emrahdgn/PlantCare-MLOps/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../../model/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../data_transforms/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
